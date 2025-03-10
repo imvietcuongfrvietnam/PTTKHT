@@ -30,7 +30,6 @@ CREATE TABLE `sinh_vien` (
   `da_xoa` boolean
 );
 
-
 CREATE TABLE `mon_hoc` (
   `id` varchar(255) PRIMARY KEY,
   `ten_mon` varchar(255),
