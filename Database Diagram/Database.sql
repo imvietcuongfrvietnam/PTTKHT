@@ -20,6 +20,7 @@ CREATE TABLE `giao_vien` (
   `da_xoa` boolean
 );
 
+
 CREATE TABLE `sinh_vien` (
   `id` varchar(255) PRIMARY KEY,
   `id_nguoi_dung` uuid,
