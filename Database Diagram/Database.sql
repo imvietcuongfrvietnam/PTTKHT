@@ -11,7 +11,6 @@ CREATE TABLE `nguoi_dung` (
   `da_xoa` boolean
 );
 
-
 CREATE TABLE `giao_vien` (
   `id` varchar(255) PRIMARY KEY,
   `id_nguoi_dung` uuid,
