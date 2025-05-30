@@ -55,9 +55,9 @@ CREATE TABLE `hoc_ky` (
 
 CREATE TABLE `lop_hoc` (
   `id` varchar(255) PRIMARY KEY,
-  `id_mon_hoc` uuid,
-  `id_hoc_ky` uuid,
-  `id_giao_vien` uuid,
+  `id_mon_hoc` varchar(255),
+  `id_hoc_ky` varchar(255),
+  `id_giao_vien` varchar(255),
   `so_sinh_vien_toi_da` int,
   `he_dao_tao` ENUM ('elitech', 'chuan'),
   `loai_lop` ENUM ('lop_thi_nghiem', 'lop_ly_thuyet'),
@@ -68,8 +68,8 @@ CREATE TABLE `lop_hoc` (
 
 CREATE TABLE `dang_ky` (
   `id` uuid PRIMARY KEY,
-  `id_lop_hoc` uuid,
-  `id_sinh_vien` uuid UNIQUE,
+  `id_lop_hoc` varchar(255),
+  `id_sinh_vien` varchar(255) UNIQUE,
   `trang_thai` ENUM ('inserting', 'thanh_cong', 'that_bai'),
   `thoi_gian_dang_ky` timestamp,
   `ngay_tao` timestamp,
@@ -79,8 +79,8 @@ CREATE TABLE `dang_ky` (
 
 CREATE TABLE `don_xin_mo_lop` (
   `id` uuid PRIMARY KEY,
-  `id_sinh_vien` uuid,
-  `id_mon_hoc` uuid,
+  `id_sinh_vien` varchar(255),
+  `id_mon_hoc` varchar(255),
   `nguyen_nhan` text,
   `trang_thai` ENUM ('approved', 'pending', 'rejected'),
   `ngay_tao` timestamp,
