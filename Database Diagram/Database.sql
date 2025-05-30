@@ -77,6 +77,17 @@ CREATE TABLE `dang_ky` (
   `da_xoa` boolean
 );
 
+CREATE TABLE `don_xin_mo_lop` (
+  `id` uuid PRIMARY KEY,
+  `id_sinh_vien` uuid,
+  `id_mon_hoc` uuid,
+  `nguyen_nhan` text,
+  `trang_thai` ENUM ('approved', 'pending', 'rejected'),
+  `ngay_tao` timestamp,
+  `ngay_cap_nhat` timestamp,
+  `da_xoa` boolean
+);
+
 ALTER TABLE `giao_vien` ADD FOREIGN KEY (`id_nguoi_dung`) REFERENCES `nguoi_dung` (`id`);
 
 ALTER TABLE `sinh_vien` ADD FOREIGN KEY (`id_nguoi_dung`) REFERENCES `nguoi_dung` (`id`);
@@ -92,3 +103,7 @@ ALTER TABLE `lop_hoc` ADD FOREIGN KEY (`id_giao_vien`) REFERENCES `giao_vien` (`
 ALTER TABLE `dang_ky` ADD FOREIGN KEY (`id_lop_hoc`) REFERENCES `lop_hoc` (`id`);
 
 ALTER TABLE `dang_ky` ADD FOREIGN KEY (`id_sinh_vien`) REFERENCES `sinh_vien` (`id`);
+
+ALTER TABLE `don_xin_mo_lop` ADD FOREIGN KEY (`id_sinh_vien`) REFERENCES `sinh_vien` (`id`);
+
+ALTER TABLE `don_xin_mo_lop` ADD FOREIGN KEY (`id_mon_hoc`) REFERENCES `mon_hoc` (`id`);
